@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-08T02:57:38.339Z</updated>
+  <updated>2020-05-08T08:10:50.038Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Ubuntu16.04下搭建hadoop3.2.0</title>
-    <link href="http://yoursite.com/2020/05/08/ubuntu16-04-xia-da-jian-hadoop3-2-0/"/>
-    <id>http://yoursite.com/2020/05/08/ubuntu16-04-xia-da-jian-hadoop3-2-0/</id>
-    <published>2020-05-08T02:57:38.000Z</published>
-    <updated>2020-05-08T02:57:38.339Z</updated>
+    <title>CentOS7-hadoop3.2.0环境搭建</title>
+    <link href="http://yoursite.com/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/"/>
+    <id>http://yoursite.com/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/</id>
+    <published>2020-05-08T07:33:56.000Z</published>
+    <updated>2020-05-08T08:10:50.038Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;CentOS7下搭建hadoop3-2-0完全分布式&quot;&gt;&lt;a href=&quot;#CentOS7下搭建hadoop3-2-0完全分布式&quot; class=&quot;headerlink&quot;
+        
+      
     
     </summary>
     
     
+      <category term="大数据" scheme="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+    
+      <category term="大数据" scheme="http://yoursite.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+      <category term="Hadoop" scheme="http://yoursite.com/tags/Hadoop/"/>
     
   </entry>
   
@@ -36,7 +50,7 @@
     <link href="http://yoursite.com/2020/05/07/mou-pao-pai-xu-java-shi-xian/"/>
     <id>http://yoursite.com/2020/05/07/mou-pao-pai-xu-java-shi-xian/</id>
     <published>2020-05-07T13:14:45.000Z</published>
-    <updated>2020-05-07T13:27:54.805Z</updated>
+    <updated>2020-05-08T03:43:04.765Z</updated>
     
     <summary type="html">
     
@@ -56,7 +70,9 @@
       <category term="数据结构与算法" scheme="http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
     
     
-      <category term="java 算法" scheme="http://yoursite.com/tags/java-%E7%AE%97%E6%B3%95/"/>
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

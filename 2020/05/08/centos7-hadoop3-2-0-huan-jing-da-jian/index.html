@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Ubuntu16.04下搭建hadoop3.2.0, 叮噹貓">
+    <meta name="keywords" content="CentOS7-hadoop3.2.0环境搭建, 叮噹貓">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Ubuntu16.04下搭建hadoop3.2.0 | 叮噹貓</title>
+    <title>CentOS7-hadoop3.2.0环境搭建 | 叮噹貓</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Ubuntu16.04下搭建hadoop3.2.0</h1>
+                    <h1 class="description center-align post-title">CentOS7-hadoop3.2.0环境搭建</h1>
                 </div>
             </div>
         </div>
@@ -429,12 +429,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                <span class="chip bg-color">大数据</span>
+                            </a>
+                        
+                            <a href="/tags/Hadoop/">
+                                <span class="chip bg-color">Hadoop</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                大数据
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -452,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    2k
                 </div>
                 
 
@@ -464,7 +481,271 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="CentOS7下搭建hadoop3-2-0完全分布式"><a href="#CentOS7下搭建hadoop3-2-0完全分布式" class="headerlink" title="CentOS7下搭建hadoop3.2.0完全分布式"></a>CentOS7下搭建hadoop3.2.0完全分布式</h1><p>（全程使用root用户操作）</p>
+<p>这里搭建的是3个节点的完全分布式，即1个nameNode，2个dataNode，分别如下：</p>
+<p>CentOS-master  nameNode  192.168.11.140</p>
+<p>CentOS-node1  dataNode   192.168.11.141</p>
+<p>CentOS-node2  dataNode   192.168..11.142</p>
+<p>参考源：<a href="https://www.cnblogs.com/andy6/p/7440804.html" target="_blank" rel="noopener">https://www.cnblogs.com/andy6/p/7440804.html</a></p>
+<p>实验环境：</p>
+<p>​    Vmware12 </p>
+<p>软件版本：</p>
+<p>​    jdk-8u181-linux-x64.tar.gz ，hadoop-3.2.0</p>
+<p>一、 实现步骤:</p>
+<ol>
+<li>首先创建好一个CentOS虚拟机，将它作为主节点我这里起名为CentOS-master，起什么都行，不固定要求</li>
+</ol>
+<ol start="2">
+<li><p>虚拟机安装完成后，配置静态IP（以下网络配置图片来自参考网址）</p>
+<p>详细配置步骤可参考以下博客：</p>
+<p><a href="https://blog.csdn.net/aafeiyang/article/details/81533542" target="_blank" rel="noopener">https://blog.csdn.net/aafeiyang/article/details/81533542</a></p>
+</li>
+</ol>
+<p>   第一步：</p>
+<p>   第二步：</p>
+<p>   第三步：</p>
+<p>   第四步：修改一个配置文件（ifcfg-ens33这个文件不同的电脑可能文件名字不一样）</p>
+<p>   ​       <strong>vim /etc/sysconfig/network-scripts/ifcfg-ens33</strong></p>
+<pre><code>   DEVICE=&quot;eth0&quot;
+   BOOTPROTO=&quot;static&quot;  &lt;!--将原来的dhcp改成&quot;static&quot;--&gt;
+   HWADDR=&quot;00:0C:29:83:7F:54&quot;
+   IPV6INIT=&quot;yes&quot;
+   NM_CONTROLLED=&quot;yes&quot;
+   ONBOOT=&quot;yes&quot;    &lt;!--这儿要将&quot;no&quot;改成&quot;yes&quot;--&gt;
+   TYPE=&quot;Ethernet&quot;
+   UUID=&quot;aae85c0a-42db-4772-b940-0fc9c875afd2&quot;
+   IPADDR=192.168.174.10   &lt;!--IP地址配一个自己想要配的地址，但是必须是同VMnet8的子网IP在同一网段--&gt;
+   GATEWAY=192.168.174.2 &lt;!--网关，这个值与我们在“NAT（设置S）...”设置的网关一样--&gt;
+   NETMASK=255.255.255.0  &lt;!--子网掩码--&gt;
+   DNS1=192.168.174.2         &lt;!--DNS的值也跟我们“NAT（设置）...”设置的的网关一样--&gt;</code></pre><p>   第五步：重启虚拟机</p>
+<ol start="3">
+<li><p>安装和配置jdk</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/wps4.jpg" alt="img"> </p>
+</li>
+</ol>
+<p>   <img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/wps5.jpg" alt="img"></p>
+<ol start="4">
+<li><p>输入 systemctl stop firewalld.service ，关闭防火墙</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508161020198.png" alt="image-20200508161020198"></p>
+</li>
+<li><p>输入 systemctl disable firewalld.service ，禁用防火墙</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508161014673.png" alt="image-20200508161014673"></p>
+</li>
+<li><p>输入 mkdir /usr/local/hadoop 创建一个hadoop的文件夹</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508161011052.png" alt="image-20200508161011052"></p>
+</li>
+<li><p>进入存放hadoop  jar包的目录，输入 tar -zxvf hadoop-3.2.0.tar.gz -C /usr/local/hadoop解压tar包</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160952891.png" alt="image-20200508160952891"></p>
+</li>
+<li><p>输入 vim /etc/profile 或vim /etc/profile，配置环境变量</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160949817.png" alt="image-20200508160949817"></p>
+</li>
+<li><p>加入如下内容，保存并退出</p>
+<p>HADOOP_HOME=/usr/local/hadoop/hadoop-3.2.0/</p>
+<p>PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160928274.png" alt="image-20200508160928274"></p>
+</li>
+<li><p>输入 source /etc/profile ，使环境变量生效</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160923977.png" alt="image-20200508160923977"></p>
+</li>
+<li><p>任意目录输入 hado ，然后按Tab，如果自动补全为hadoop，则说明环境变量配的没问题，否则检查环境变量哪出错了</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160919536.png" alt="image-20200508160919536"></p>
+</li>
+<li><p>创建3个之后要用到的文件夹，分别如下：</p>
+<p>mkdir /usr/local/hadoop/tmp</p>
+<p>mkdir -p /usr/local/hadoop/hdfs/name</p>
+<p>mkdir /usr/local/hadoop/hdfs/data</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160914134.png" alt="image-20200508160914134"></p>
+</li>
+<li><p>进入hadoop解压后的 /etc/hadoop 目录，里面存放的是hadoop的配置文件，接下来要修改这里面一些配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160907935.png" alt="image-20200508160907935"></p>
+</li>
+<li><p>有2个.sh文件，需要指定一下JAVA的目录，首先输入 vim hadoop-env.sh 修改配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160903295.png" alt="image-20200508160903295"></p>
+</li>
+<li><p>找到JAVA_HOME注释区，去掉注释，根据自己的JDK安装位置，精确配置JAVA_HOME如下，保存并退出</p>
+<p>export JAVA_HOME=/opt/java/jdk1.8.0_181/</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160857709.png" alt="image-20200508160857709"></p>
+</li>
+<li><p>输入 vim yarn-env.sh 修改配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160847083.png" alt="image-20200508160847083"></p>
+</li>
+<li><p>在文件头加入如下内容，指定JAVA_HOME，保存并退出</p>
+<p>export JAVA_HOME=/opt/java/jdk1.8.0_181/</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160833139.png" alt="image-20200508160833139"></p>
+</li>
+<li><p>输入 vim core-site.xml 修改配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160827118.png" alt="image-20200508160827118"></p>
+</li>
+<li><p>在configuration标签中，添加如下内容，保存并退出，注意这里配置的hdfs:master:9000是不能在浏览器访问的</p>
+<pre><code>&lt;property&gt;
+    &lt;name&gt; fs.default.name &lt;/name&gt;
+    &lt;value&gt;hdfs://master:9000&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;fs.defaultFS&lt;/name&gt;
+    &lt;value&gt;hdfs://master:9000&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;
+    &lt;value&gt;/usr/local/hadoop/tmp&lt;/value&gt;
+&lt;/property&gt;</code></pre><p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160818214.png" alt="image-20200508160818214"></p>
+</li>
+<li><p>输入 vim hdfs-site.xml 修改配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160813085.png" alt="image-20200508160813085"></p>
+</li>
+<li><p>在configuration标签中，添加如下内容，保存并退出</p>
+<pre><code>&lt;property&gt;
+     &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;
+     &lt;value&gt;file:/usr/local/hadoop/hdfs/name&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+      &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
+      &lt;value&gt;file:/usr/local/hadoop/hdfs/data&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+      &lt;name&gt;dfs.replication&lt;/name&gt;
+      &lt;value&gt;1&lt;/value&gt;
+&lt;/property&gt;</code></pre><p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160807726.png" alt="image-20200508160807726"></p>
+</li>
+<li><p>输入 vim mapred-site.xml 修改配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160800472.png" alt="image-20200508160800472"></p>
+</li>
+<li><p>在configuration标签中，添加如下内容，保存并退出</p>
+<pre><code>&lt;property&gt;
+        &lt;name&gt;mapreduce.framework.name&lt;/name&gt;
+        &lt;value&gt;yarn&lt;/value&gt;
+&lt;/property&gt;</code></pre><p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160754267.png" alt="image-20200508160754267"></p>
+</li>
+<li><p>输入 vim yarn-site.xml 修改配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160742937.png" alt="image-20200508160742937"></p>
+</li>
+<li><p>在configuration标签中，添加如下内容，保存并退出</p>
+<pre><code>&lt;property&gt;
+    &lt;name&gt;yarn.resourcemanager.hostname&lt;/name&gt;
+    &lt;value&gt;master&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+    &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;
+    &lt;value&gt;mapreduce_shuffle&lt;/value&gt;
+&lt;/property&gt;</code></pre><p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160735620.png" alt="image-20200508160735620"></p>
+</li>
+<li><p>输入 vim workers 修改配置文件</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160730425.png" alt="image-20200508160730425"></p>
+</li>
+<li><p>将localhost删掉，加入如下内容，即dataNode节点的主机名</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160725303.png" alt="image-20200508160725303"></p>
+</li>
+<li><p>将虚拟机关闭，再复制两份虚拟机，重命名为如下，注意这里一定要关闭虚拟机，再复制</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160718744.png" alt="image-20200508160718744"></p>
+</li>
+<li><p>将3台虚拟机都打开，后两台复制的虚拟机打开时，都选择“我已复制该虚拟机”</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160715055.png" alt="image-20200508160715055"></p>
+</li>
+<li><p>将node1的IP地址改为192.168.11.141，    将node2 IP地址改为192.168.11.142</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160709310.png" alt="image-20200508160709310"></p>
+</li>
+<li><p>在master机器上，输入 vim /etc/hostname，将localhost改为master，保存并退出</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160703419.png" alt="image-20200508160703419"></p>
+</li>
+<li><p>在node1机器上，输入 vim /etc/hostname，将localhost改为node1，保存并退出</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160657723.png" alt="image-20200508160657723"></p>
+</li>
+<li><p>在node2机器上，输入 vim /etc/hostname，将localhost改为node2，保存并退出</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160650455.png" alt="image-20200508160650455"></p>
+</li>
+<li><p>在三台机器分别输入 vim /etc/hosts 修改文件，其作用是将一些常用的网址域名与其对应的IP地址建立一个关联，当用户在访问网址时，系统会首先自动从Hosts文件中寻找对应的IP地址</p>
+</li>
+<li><p>三个文件中都加入如下内容，保存并退出，注意这里要根据自己实际IP和节点主机名进行更改，IP和主机名中间要有一个空格</p>
+<p>192.168.11.140 master</p>
+<p>192.168.11.141 node1</p>
+<p>192.168.11.142 node2</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160643833.png" alt="image-20200508160643833"></p>
+</li>
+<li><p>在master机器上输入 ssh-keygen -t dsa -P ‘’ -f ~/.ssh/id_dsa 创建一个无密码的公钥，-t是类型的意思，dsa是生成的密钥类型，-P是密码，’’表示无密码，-f后是秘钥生成后保存的位置</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160637143.png" alt="image-20200508160637143"></p>
+</li>
+<li><p>在master机器上输入 cat ~/.ssh/id_dsa.pub &gt;&gt; ~/.ssh/authorized_keys 将公钥id_dsa.pub添加进keys，这样就可以实现无密登陆ssh</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160630628.png" alt="image-20200508160630628"></p>
+</li>
+<li><p>在master机器上输入 ssh master 测试免密码登陆</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160625477.png" alt="image-20200508160625477"></p>
+</li>
+<li><p>如果有询问，则输入 yes ，回车</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160620349.png" alt="image-20200508160620349"></p>
+</li>
+<li><p>在node1主机上执行 mkdir ~/.ssh</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160616568.png" alt="image-20200508160616568"></p>
+</li>
+<li><p>在node2主机上执行 mkdir ~/.ssh</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160610928.png" alt="image-20200508160610928"></p>
+</li>
+<li><p>在master机器上输入 scp <del>/.ssh/authorized_keys root@node1:</del>/.ssh/authorized_keys 将主节点的公钥信息导入node1节点，导入时要输入一下node1机器的登陆密码</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160604749.png" alt="image-20200508160604749"></p>
+</li>
+<li><p>在master机器上输入 scp <del>/.ssh/authorized_keys root@node2:</del>/.ssh/authorized_keys 将主节点的公钥信息导入node2节点，导入时要输入一下node2机器的登陆密码</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160559286.png" alt="image-20200508160559286"></p>
+</li>
+<li><p>在三台机器上分别执行 chmod 600 ~/.ssh/authorized_keys 赋予密钥文件权限</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/wps1.jpg" alt="img"></p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/wps2.jpg" alt="img"> </p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/wps3.jpg" alt="img"></p>
+</li>
+<li><p>在master节点上分别输入 ssh node1 和 ssh node2 测试是否配置ssh成功</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160539731.png" alt="image-20200508160539731"></p>
+</li>
+<li><p>在master机器上，任意目录输入 hdfs namenode -format 格式化namenode，第一次使用需格式化一次，之后就不用再格式化，如果改一些配置文件了，可能还需要再次格式化</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160532722.png" alt="image-20200508160532722"></p>
+</li>
+<li><p>格式化完成</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160526052.png" alt="image-20200508160526052"></p>
+</li>
+<li><p>在master机器上，进入hadoop的sbin目录，输入 ./start-all.sh 启动hadoop</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160510421.png" alt="image-20200508160510421">)<img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160515446.png" alt="image-20200508160515446">)<img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160519165.png" alt="image-20200508160519165"></p>
+<p><em>如果报错</em></p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160502322.png" alt="image-20200508160502322"></p>
+</li>
+</ol>
+<pre><code>***修改以下4个文件：***
+
+在/usr/local/hadoop/Hadoop-3.2.0/sbin路径下： 
+
+将start-dfs.sh，stop-dfs.sh两个文件顶部添加以下参数
+
+```</code></pre><p>#!/usr/bin/env bash</p>
+<pre><code>HDFS_DATANODE_USER=root
+
+HADOOP_DATANODE_SECURE_USER=hdfs
+
+HDFS_NAMENODE_USER=root
+
+HDFS_SECONDARYNAMENODE_USER=root
+```
+
+还有，start-yarn.sh，stop-yarn.sh顶部也需添加以下参数：
+
+```</code></pre><p>#!/usr/bin/env bash</p>
+<pre><code>YARN_RESOURCEMANAGER_USER=root
+
+HADOOP_SECURE_DN_USER=yarn
+
+YARN_NODEMANAGER_USER=root
+```
+
+
+
+修改后重启 start-all.sh</code></pre><ol start="49">
+<li><p>输入 jps 查看当前java的进程，该命令是JDK1.5开始有的，作用是列出当前java进程的PID和Java主类名，nameNode节点除了JPS，还有3个进程，启动成功</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160442709.png" alt="image-20200508160442709"></p>
+</li>
+<li><p>在node1机器和node2机器上分别输入 jps 查看进程如下，说明配置成功</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160425107.png" alt="image-20200508160425107">)<img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160430270.png" alt="image-20200508160430270"></p>
+</li>
+<li><p>在浏览器访问nameNode节点的8088端口和9870端口可以查看hadoop的运行状况</p>
+<p><img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160402263.png" alt="image-20200508160402263">)<img src="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/image-20200508160415831.png" alt="image-20200508160415831"></p>
+</li>
+</ol>
+
             </div>
             <hr/>
 
@@ -489,7 +770,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/05/08/ubuntu16-04-xia-da-jian-hadoop3-2-0/">http://yoursite.com/2020/05/08/ubuntu16-04-xia-da-jian-hadoop3-2-0/</a>
+                    <a href="http://yoursite.com/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/">http://yoursite.com/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -526,7 +807,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                                    <span class="chip bg-color">大数据</span>
+                                </a>
+                            
+                                <a href="/tags/Hadoop/">
+                                    <span class="chip bg-color">Hadoop</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -697,19 +986,21 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2020/05/08/ubuntu16-04-xia-da-jian-hadoop3-2-0/">
+                <a href="/2020/05/08/centos7-hadoop3-2-0-huan-jing-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Ubuntu16.04下搭建hadoop3.2.0">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="CentOS7-hadoop3.2.0环境搭建">
                         
-                        <span class="card-title">Ubuntu16.04下搭建hadoop3.2.0</span>
+                        <span class="card-title">CentOS7-hadoop3.2.0环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            CentOS7下搭建hadoop3.2.0完全分布式（全程使用root用户操作）
+这里搭建的是3个节点的完全分布式，即1个nameNode，2个dataNode，分别如下：
+CentOS-master  nameNode  192.168.
                         
                     </div>
                     <div class="publish-info">
@@ -718,13 +1009,29 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            叮噹貓
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                    <a href="/tags/Hadoop/">
+                        <span class="chip bg-color">Hadoop</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -771,8 +1078,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java-%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">java 算法</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
