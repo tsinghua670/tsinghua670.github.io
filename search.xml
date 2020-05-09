@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Maven工程变灰色解决方法</title>
+      <link href="/2020/05/09/maven-gong-cheng-bian-hui-se-jie-jue-fang-fa/"/>
+      <url>/2020/05/09/maven-gong-cheng-bian-hui-se-jie-jue-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Maven工程变灰色解决方法"><a href="#Maven工程变灰色解决方法" class="headerlink" title="Maven工程变灰色解决方法"></a>Maven工程变灰色解决方法</h1><p>在使用idea的过程中，遇到其中一个maven模块变成灰色，如下所示：</p><p><img src="/2020/05/09/maven-gong-cheng-bian-hui-se-jie-jue-fang-fa/image-20200509205143629.png" alt="image-20200509205143629"></p><p>​        造成这个的原因可能是忽略了maven模块，可以尝试如下解决方法：在idea中maven的setting中找到ignored files,看右边的面板中是否将变灰的maven模块忽略了。我的模块变灰就是因为这个原因，Settings–&gt;Maven–&gt;Ignored Files 看看是不是有勾选的。去掉就好了。</p><p><img src="/2020/05/09/maven-gong-cheng-bian-hui-se-jie-jue-fang-fa/image-20200509205212747.png" alt="image-20200509205212747"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>选择排序</title>
       <link href="/2020/05/08/xuan-ze-pai-xu/"/>
       <url>/2020/05/08/xuan-ze-pai-xu/</url>
