@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-09T13:26:50.150Z</updated>
+  <updated>2020-05-10T07:27:15.317Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jdk8新特性</title>
+    <link href="http://yoursite.com/2020/05/10/jdk8-xin-te-xing/"/>
+    <id>http://yoursite.com/2020/05/10/jdk8-xin-te-xing/</id>
+    <published>2020-05-10T07:25:28.000Z</published>
+    <updated>2020-05-10T07:27:15.317Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JDK1-8的新特性&quot;&gt;&lt;a href=&quot;#JDK1-8的新特性&quot; class=&quot;headerlink&quot; title=&quot;JDK1.8的新特性&quot;&gt;&lt;/a&gt;JDK1.8的新特性&lt;/h1&gt;&lt;h2 id=&quot;1-前言&quot;&gt;&lt;a href=&quot;#1-前言&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="jdk8" scheme="http://yoursite.com/tags/jdk8/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu16.04下搭建hadoop3.2.0</title>
