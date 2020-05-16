@@ -4,6 +4,114 @@
   
     
     <entry>
+      <title>如何將本地項目部署到github Page上</title>
+      <link href="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/"/>
+      <url>/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="如何將本地項目部署到github-Page上"><a href="#如何將本地項目部署到github-Page上" class="headerlink" title="如何將本地項目部署到github Page上"></a>如何將本地項目部署到github Page上</h1><h2 id="一、创建一个新的仓库"><a href="#一、创建一个新的仓库" class="headerlink" title="一、创建一个新的仓库"></a>一、创建一个新的仓库</h2><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516222711133.png" alt="image-20200516222711133">)<img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516222818807.png" alt="image-20200516222818807"></p><h2 id="二、设置GitHub-Pages"><a href="#二、设置GitHub-Pages" class="headerlink" title="二、设置GitHub Pages"></a>二、设置GitHub Pages</h2><p>打开仓库选择设置</p><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516223036363.png" alt="image-20200516223036363"></p><p>找到GitHub Pages设置：选择change theme，随便一个主题，然后保存。即可生成一个可访问网址</p><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516225057431.png" alt="image-20200516225057431"></p><h2 id="三、将创建的仓库克隆到本地"><a href="#三、将创建的仓库克隆到本地" class="headerlink" title="三、将创建的仓库克隆到本地"></a>三、将创建的仓库克隆到本地</h2><p>打开此电脑，选择一个盘符，空白处鼠标右键 git bash here（前提是git已经安装好），创建一个文件夹（名字随意），进入新创建的文件夹</p><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516223725968.png" alt="image-20200516223725968">)<img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516223832038.png" alt="image-20200516223832038"></p><p>将仓库的链接复制，然后克隆到该文件夹下，git clone …..，然后进入新克隆的文件下</p><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516224250030.png" alt="image-20200516224250030"></p><h2 id="四、上传本地项目到仓库"><a href="#四、上传本地项目到仓库" class="headerlink" title="四、上传本地项目到仓库"></a>四、上传本地项目到仓库</h2><p>将自己的项目文件拷贝到刚克隆的仓库文件中，然后按顺序执行以下命令：</p><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516224506560.png" alt="image-20200516224506560"></p><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516224620176.png" alt="image-20200516224620176"></p><p><img src="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/image-20200516224723191.png" alt="image-20200516224723191"></p><p>最后进入github仓库页面刷新以下，即可看到成功的页面。</p><p>用GitHub Pages上的网页即可访问效果图。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>快速排序</title>
+      <link href="/2020/05/10/kuai-su-pai-xu/"/>
+      <url>/2020/05/10/kuai-su-pai-xu/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>归并排序</title>
+      <link href="/2020/05/10/gui-bing-pai-xu/"/>
+      <url>/2020/05/10/gui-bing-pai-xu/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>插入排序</title>
+      <link href="/2020/05/10/cha-ru-pai-xu/"/>
+      <url>/2020/05/10/cha-ru-pai-xu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="插入排序（java实现）"><a href="#插入排序（java实现）" class="headerlink" title="插入排序（java实现）"></a>插入排序（java实现）</h1><ol><li><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol><li><p>將第一個元素看作一個有序的序列，把第二個元素到最後一個元素當作未排序序列</p></li><li><p>從頭到尾依次掃描未排序序列，將掃描到的每個元素插入有序序列的適當位置。（如果待插入元素與有序序列的某個元素相等，則將待插入元素插入到相等元素的後面）</p></li></ol></li></ol><ol start="2"><li><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Code_InsertSort</span> <span class="token punctuation">{</span>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">insertSort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">if</span> <span class="token punctuation">(</span>arr <span class="token operator">==</span> null <span class="token operator">||</span> arr<span class="token punctuation">.</span>length <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token keyword">return</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> arr<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>                <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> j<span class="token punctuation">,</span> j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">swap</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> i<span class="token punctuation">,</span> <span class="token keyword">int</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">int</span> tmp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> tmp<span class="token punctuation">;</span>    <span class="token punctuation">}</span></code></pre></li></ol><pre><code>   public static void main(String[] args) {       // TODO Auto-generated method stub   }</code></pre><p>   }</p><pre><code></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>jdk8新特性</title>
       <link href="/2020/05/10/jdk8-xin-te-xing/"/>
       <url>/2020/05/10/jdk8-xin-te-xing/</url>
