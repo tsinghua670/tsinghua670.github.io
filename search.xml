@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>git常用命令</title>
+      <link href="/2020/06/28/git-chang-yong-ming-ling/"/>
+      <url>/2020/06/28/git-chang-yong-ming-ling/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>将本地项目部署到github</title>
+      <link href="/2020/06/28/jiang-ben-di-xiang-mu-bu-shu-dao-github/"/>
+      <url>/2020/06/28/jiang-ben-di-xiang-mu-bu-shu-dao-github/</url>
+      
+        <content type="html"><![CDATA[<h1 id="将本地项目部署到github"><a href="#将本地项目部署到github" class="headerlink" title="将本地项目部署到github"></a>将本地项目部署到github</h1><ol><li><h2 id="在本地创建一个文件夹"><a href="#在本地创建一个文件夹" class="headerlink" title="在本地创建一个文件夹"></a>在本地创建一个文件夹</h2></li><li><h2 id="在文件夹内打开git-bash，然后初始化文件夹"><a href="#在文件夹内打开git-bash，然后初始化文件夹" class="headerlink" title="在文件夹内打开git bash，然后初始化文件夹"></a>在文件夹内打开git bash，然后初始化文件夹</h2><pre><code>git init #初始化一个仓库</code></pre></li></ol><ol start="3"><li><h2 id="将需要上传的项目内容复制到已初始化文件夹内"><a href="#将需要上传的项目内容复制到已初始化文件夹内" class="headerlink" title="将需要上传的项目内容复制到已初始化文件夹内"></a>将需要上传的项目内容复制到已初始化文件夹内</h2></li><li><h2 id="在github上创建一个新的仓库（最好与自己创建的文件名相同）"><a href="#在github上创建一个新的仓库（最好与自己创建的文件名相同）" class="headerlink" title="在github上创建一个新的仓库（最好与自己创建的文件名相同）"></a>在github上创建一个新的仓库（最好与自己创建的文件名相同）</h2></li><li><h2 id="将项目上传到github仓库中，依次输入以下命令"><a href="#将项目上传到github仓库中，依次输入以下命令" class="headerlink" title="将项目上传到github仓库中，依次输入以下命令"></a>将项目上传到github仓库中，依次输入以下命令</h2><pre><code>git add . #将项目加入暂存区git commit -m &quot;first commit(可以自定义)&quot; #提交到仓库git remote add origin 仓库路径 #github仓库与本地仓库关联git push -u origin master #将内容推送到远程仓库，第二次后不用再加 -u 参数</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+            <tag> github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何將本地項目部署到github Page上</title>
       <link href="/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/"/>
       <url>/2020/05/16/ru-he-jiang-ben-di-xiang-mu-bu-shu-dao-github-page-shang/</url>
@@ -62,7 +102,7 @@
       <link href="/2020/05/10/gui-bing-pai-xu/"/>
       <url>/2020/05/10/gui-bing-pai-xu/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><h2 id="实现步骤"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤</h2><p>1.先将需排序的数据分成两个长度子数组，</p><p>2.然后用递归的方式将分开后的两个子数组排序成两个有序的数组，</p><p>3.创建一个新的辅助数组，大小与原数组相同，分别用两指针遍历两个子数组，比较两数组指针所指元素，小的放入新数组中，以此类推，最后将两个子数组的元素全部放进辅助数组</p><p>4.最后将辅助数组的元素拷贝回原数组</p><h2 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> lef<span class="token punctuation">,</span><span class="token keyword">int</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">if</span><span class="token punctuation">(</span>lef <span class="token operator">==</span> right<span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token keyword">return</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>right <span class="token operator">-</span> lef<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>    <span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>lef<span class="token punctuation">,</span>mid<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">mergeSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>mid<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">merge</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>left<span class="token punctuation">,</span>mid<span class="token punctuation">,</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">merge</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> L<span class="token punctuation">,</span><span class="token keyword">int</span> mid<span class="token punctuation">,</span><span class="token keyword">int</span> R<span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> help <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">int</span><span class="token punctuation">[</span>R<span class="token operator">-</span>L<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>    <span class="token keyword">int</span> p1 <span class="token operator">=</span> L<span class="token punctuation">;</span>    <span class="token keyword">int</span> p2 <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>    <span class="token keyword">while</span><span class="token punctuation">(</span>p1 <span class="token operator">&lt;=</span> mid <span class="token operator">&amp;&amp;</span> p2 <span class="token operator">&lt;=</span> R<span class="token punctuation">)</span> <span class="token punctuation">{</span>        help<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>p1<span class="token punctuation">]</span> <span class="token operator">></span> arr<span class="token punctuation">[</span>p2<span class="token punctuation">]</span> <span class="token operator">?</span> arr<span class="token punctuation">[</span>p2<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">:</span> arr<span class="token punctuation">[</span>p1<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">while</span><span class="token punctuation">(</span>p1 <span class="token operator">&lt;=</span> mid<span class="token punctuation">)</span> <span class="token punctuation">{</span>        help<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>p1<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">while</span><span class="token punctuation">(</span>p2 <span class="token operator">&lt;=</span> R<span class="token punctuation">)</span> <span class="token punctuation">{</span>        help<span class="token punctuation">[</span>i<span class="token operator">++</span><span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>p2<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> help<span class="token punctuation">.</span>lenght<span class="token operator">-</span><span class="token number">1</span>；i<span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>        arr<span class="token punctuation">[</span>L<span class="token operator">+</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> help<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>]]></content>
       
       
       <categories>

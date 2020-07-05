@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-16T14:51:05.112Z</updated>
+  <updated>2020-06-28T15:36:48.231Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git常用命令</title>
+    <link href="http://yoursite.com/2020/06/28/git-chang-yong-ming-ling/"/>
+    <id>http://yoursite.com/2020/06/28/git-chang-yong-ming-ling/</id>
+    <published>2020-06-28T15:36:48.000Z</published>
+    <updated>2020-06-28T15:36:48.231Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>将本地项目部署到github</title>
+    <link href="http://yoursite.com/2020/06/28/jiang-ben-di-xiang-mu-bu-shu-dao-github/"/>
+    <id>http://yoursite.com/2020/06/28/jiang-ben-di-xiang-mu-bu-shu-dao-github/</id>
+    <published>2020-06-28T15:20:07.000Z</published>
+    <updated>2020-06-28T15:34:40.228Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;将本地项目部署到github&quot;&gt;&lt;a href=&quot;#将本地项目部署到github&quot; class=&quot;headerlink&quot; title=&quot;将本地项目部署到github&quot;&gt;&lt;/a&gt;将本地项目部署到github&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="github" scheme="http://yoursite.com/categories/github/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>如何將本地項目部署到github Page上</title>
@@ -71,9 +116,17 @@
     <link href="http://yoursite.com/2020/05/10/gui-bing-pai-xu/"/>
     <id>http://yoursite.com/2020/05/10/gui-bing-pai-xu/</id>
     <published>2020-05-10T08:02:37.000Z</published>
-    <updated>2020-05-16T14:57:18.090Z</updated>
+    <updated>2020-07-03T13:54:13.858Z</updated>
     
     <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;归并排序&quot;&gt;&lt;a href=&quot;#归并排序&quot; class=&quot;headerlink&quot; title=&quot;归并排序&quot;&gt;&lt;/a&gt;归并排序&lt;/h1&gt;&lt;h2 id=&quot;实现步骤&quot;&gt;&lt;a href=&quot;#实现步骤&quot; class=&quot;headerlink&quot;
+        
+      
     
     </summary>
     
