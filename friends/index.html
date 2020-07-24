@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java正则表达式, 叮噹貓">
+    <meta name="keywords" content="友情链接, 叮噹貓">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java正则表达式 | 叮噹貓</title>
+    <title>友情链接 | 叮噹貓</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java正则表达式</h1>
+                    <h1 class="description center-align post-title">友情链接</h1>
                 </div>
             </div>
         </div>
@@ -429,29 +429,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/java/">
-                                <span class="chip bg-color">java</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-                                <span class="chip bg-color">正则表达式</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/java/" class="post-category">
-                                java
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -460,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-05
+                    2020-07-24
                 </div>
                 
 
@@ -469,7 +452,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    756
+                    0
                 </div>
                 
 
@@ -481,180 +464,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java正则表达式"><a href="#java正则表达式" class="headerlink" title="java正则表达式"></a>java正则表达式</h1><pre class=" language-java"><code class="language-java"><span class="token keyword">package</span> com<span class="token punctuation">.</span>cxr<span class="token punctuation">.</span>regex<span class="token punctuation">;</span>
-
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span>Matcher<span class="token punctuation">;</span>
-<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span>Pattern<span class="token punctuation">;</span>
-
-<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">regexTest</span> <span class="token punctuation">{</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment" spellcheck="true">//        String qq1 = "0832137835";</span>
-<span class="token comment" spellcheck="true">//        String qq2 = "17582236578";</span>
-<span class="token comment" spellcheck="true">//        String qq3 = "15823585";</span>
-<span class="token comment" spellcheck="true">//        System.out.println("q1=" + isNumber(qq1));</span>
-<span class="token comment" spellcheck="true">//        System.out.println("q2=" + isNumber(qq2));</span>
-<span class="token comment" spellcheck="true">//        System.out.println("q3=" + isNumber(qq3));</span>
-
-<span class="token comment" spellcheck="true">//        splitDemo1();</span>
-
-<span class="token comment" spellcheck="true">//        replaceDemo1();</span>
-
-<span class="token comment" spellcheck="true">//        getDemo();</span>
-
-        <span class="token function">testRegex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-
-    <span class="token comment" spellcheck="true">//正则表达式的练习：</span>
-    <span class="token comment" spellcheck="true">//将下面的字符串“我我我……我我……爱…爱爱……学…学……学编程”改为：“我爱学编程”</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">testRegex</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String str <span class="token operator">=</span> <span class="token string">"我我我.........我我........爱......爱爱............学...学...............学编程"</span><span class="token punctuation">;</span>
-
-        String reg <span class="token operator">=</span> <span class="token string">"\\.+"</span><span class="token punctuation">;</span>
-
-        String newStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span> <span class="token string">""</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>newStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        reg <span class="token operator">=</span> <span class="token string">"(.)\\1+"</span><span class="token punctuation">;</span>
-        String str1 <span class="token operator">=</span> newStr<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span> <span class="token string">"$1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-
-
-    <span class="token comment" spellcheck="true">//获取</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">getDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String str <span class="token operator">=</span> <span class="token string">"ming tain jiu yao fang jia le,da jia."</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//获取四个字母的单词</span>
-        String reg <span class="token operator">=</span> <span class="token string">"\\b[a-z]{4}\\b"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//将规则封装成对象</span>
-        Pattern pattern <span class="token operator">=</span> Pattern<span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//将正则对象和要作用的字符串相关联。获取匹配器对象。</span>
-        Matcher matcher <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token function">matcher</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">while</span><span class="token punctuation">(</span>matcher<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"句子中由四个字母组成的单词有："</span> <span class="token operator">+</span> matcher<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-
-
-
-
-    <span class="token comment" spellcheck="true">//替换</span>
-
-    <span class="token comment" spellcheck="true">//将“张三@@@李四YYY王五*****王尼玛”中的叠词替换为单字符，即结果为：“张三@李四Y王五*王尼玛”</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">replaceDemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String str <span class="token operator">=</span> <span class="token string">"张三@@@李四YYY王五*****王尼玛"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//匹配规则</span>
-        String regex <span class="token operator">=</span> <span class="token string">"(.)\\1+"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//使用$1来复用组中第1组的值</span>
-        String newStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token string">"$1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>newStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-    <span class="token comment" spellcheck="true">//第三：将字符串“张三@@@李四YYY王五*****王尼玛”中的叠词替换为：“、”</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">replaceDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String str <span class="token operator">=</span> <span class="token string">"张三@@@李四YYY王五*****王尼玛"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//匹配规则(使用$1来复用组中第1组的值)</span>
-        String regex <span class="token operator">=</span> <span class="token string">"(.)\\1+"</span><span class="token punctuation">;</span>
-
-        String newStr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replaceAll</span><span class="token punctuation">(</span>regex<span class="token punctuation">,</span> <span class="token string">"、"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>newStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-
-    <span class="token comment" spellcheck="true">//切割</span>
-
-    <span class="token comment" spellcheck="true">/**
-     * 【以叠词切割】：如字符串"abccsasahhhz"按“叠词”来切割就变成了“ab”，“sasa”，“z”。
-     * 因为“cc”、“hhh”都是叠词，需要切割掉。现在请将字符串“张三@@@李四￥￥王五ssssssss江流儿”按照叠词切割。
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">splitDemo1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String str <span class="token operator">=</span> <span class="token string">"张三@@@李四￥￥王五ssssssss江流儿"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">/**
-         * "(.)\\1"就表示：某一字符出现了两次(注意首先我们用(.)来表示任意字符，
-         * 而\\1是对组(.)中的字符进行复用，合起来就是：两个相同的字符)，
-         * 现在我们不只是需要出现两次的字符，所以使用+号来表示出现多次，最终叠词就表示为：regex = "(.)\\1+"。
-         */</span>
-        String reg <span class="token operator">=</span> <span class="token string">"(.)\\1+"</span><span class="token punctuation">;</span>
-
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>String string <span class="token operator">:</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-    <span class="token punctuation">}</span>
-
-    <span class="token comment" spellcheck="true">//第二：对字符串“张三@@@李四@@王五@茅台”进行切割，去掉@符号</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">splitDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String str <span class="token operator">=</span> <span class="token string">"张三@@@李四@@王五@茅台"</span><span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//描述切割规则：以若干@来切割</span>
-        String reg <span class="token operator">=</span> <span class="token string">"@+"</span><span class="token punctuation">;</span>
-
-        String<span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>reg<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">for</span> <span class="token punctuation">(</span>String string <span class="token operator">:</span> arr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-
-    <span class="token punctuation">}</span>
-
-
-
-    <span class="token comment" spellcheck="true">//匹配</span>
-    <span class="token comment" spellcheck="true">/*
-     * 匹配电话号码（匹配成功的电话号码位数为11位的纯数字，
-     * 且以1开头，第二位必须是：3、7、8中的一位，
-     * 即只匹配13*********、17*********、18*********的电话号码）
-     */</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">isNumber</span><span class="token punctuation">(</span>String number<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String regex <span class="token operator">=</span> <span class="token string">"1[378][0-9]{9}"</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">boolean</span> b <span class="token operator">=</span> number<span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">return</span> b<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-
-
-    <span class="token comment" spellcheck="true">//第一：匹配QQ号（长度5-10位，纯数字组成，且不能以0开头）</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">boolean</span> <span class="token function">isQQ</span><span class="token punctuation">(</span>String qq<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        String regex <span class="token operator">=</span> <span class="token string">"[1-9][0-9]{4,9}"</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//        String regex = "[a-z]\\d";</span>
-
-        <span class="token keyword">boolean</span> b <span class="token operator">=</span> qq<span class="token punctuation">.</span><span class="token function">matches</span><span class="token punctuation">(</span>regex<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">return</span> b<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-
-
-<span class="token punctuation">}</span>
-
-</code></pre>
-
+                
             </div>
             <hr/>
 
@@ -679,7 +489,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2020/07/05/java-zheng-ze-biao-da-shi/">http://yoursite.com/2020/07/05/java-zheng-ze-biao-da-shi/</a>
+                    <a href="http://yoursite.com/friends/index.html">http://yoursite.com/friends/index.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -716,15 +526,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/java/">
-                                    <span class="chip bg-color">java</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
-                                    <span class="chip bg-color">正则表达式</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -890,58 +692,39 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/23/jian-zhi-offer-03-er-wei-shu-zu-de-cha-zhao/">
+                <a href="/friends/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="剑指Offer-03-二维数组的查找">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="友情链接">
                         
-                        <span class="card-title">剑指Offer-03-二维数组的查找</span>
+                        <span class="card-title">友情链接</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            剑指Offer-03-二维数组的查找题目​         在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。
-解题思路代码
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%91%E6%8C%87Offer/" class="post-category">
-                                    剑指Offer
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            叮噹貓
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%89%91%E6%8C%87Offer/">
-                        <span class="chip bg-color">剑指Offer</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -949,53 +732,37 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/05/er-fen-cha-zhao/">
+                <a href="/friends/index.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="二分查找">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="友情链接">
                         
-                        <span class="card-title">二分查找</span>
+                        <span class="card-title">友情链接</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二分查找适用于有序数组，先求数组中间元素，若是所输入值比中间值小，则查询中间值前的数组元素，反之则查询后半部分，以此类推，直至找到查询元素
-代码实现public static int binarySearch(int[] arr,int f
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-category">
-                                    数据结构与算法
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            叮噹貓
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>

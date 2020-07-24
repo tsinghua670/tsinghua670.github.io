@@ -4,6 +4,85 @@
   
     
     <entry>
+      <title>Maven项目的依赖出现红线解决方式</title>
+      <link href="/2020/07/24/maven-xiang-mu-de-yi-lai-chu-xian-hong-xian-jie-jue-fang-shi/"/>
+      <url>/2020/07/24/maven-xiang-mu-de-yi-lai-chu-xian-hong-xian-jie-jue-fang-shi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Maven项目的依赖出现红线解决方式"><a href="#Maven项目的依赖出现红线解决方式" class="headerlink" title="Maven项目的依赖出现红线解决方式"></a>Maven项目的依赖出现红线解决方式</h1><p>（1）单击File =&gt; Setting菜单项，打开Settings选项卡。</p><p><img src="/2020/07/24/maven-xiang-mu-de-yi-lai-chu-xian-hong-xian-jie-jue-fang-shi/image-20200724101445812.png" alt="image-20200724101445812"></p><p>（2）在左侧的目录树中，展开Maven节点，重新设置Maven的目录，配置文件路径，以及库Repository路径（前两个设定好，会自动定位到）。</p><p><img src="/2020/07/24/maven-xiang-mu-de-yi-lai-chu-xian-hong-xian-jie-jue-fang-shi/image-20200724101521236.png" alt="image-20200724101521236"></p><p>（3）接下来就可以通过pom.xml引入你需要的依赖包了，或者直接在原来的项目基础上重新导入包。</p><p><img src="/2020/07/24/maven-xiang-mu-de-yi-lai-chu-xian-hong-xian-jie-jue-fang-shi/image-20200724101605653.png" alt="image-20200724101605653"></p><p>如果重新导入后还有红线，重新引入一下这个项目</p><p><img src="/2020/07/24/maven-xiang-mu-de-yi-lai-chu-xian-hong-xian-jie-jue-fang-shi/image-20200724101627044.png" alt="image-20200724101627044"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Maven项目如何导入本地jar包</title>
+      <link href="/2020/07/24/maven-xiang-mu-ru-he-dao-ru-ben-di-jar-bao/"/>
+      <url>/2020/07/24/maven-xiang-mu-ru-he-dao-ru-ben-di-jar-bao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Maven项目如何导入本地jar包"><a href="#Maven项目如何导入本地jar包" class="headerlink" title="Maven项目如何导入本地jar包"></a>Maven项目如何导入本地jar包</h1><p>新建lib包，之后导入（eclipse直接build path）（idea麻烦些：File→project structure→libraries→+jar包）</p><p><img src="/2020/07/24/maven-xiang-mu-ru-he-dao-ru-ben-di-jar-bao/image-20200724100449904.png" alt="image-20200724100449904">)<img src="/2020/07/24/maven-xiang-mu-ru-he-dao-ru-ben-di-jar-bao/image-20200724100544125.png" alt="image-20200724100544125"></p><p><img src="/2020/07/24/maven-xiang-mu-ru-he-dao-ru-ben-di-jar-bao/image-20200724100640676.png" alt="image-20200724100640676"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发环境 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>剑指Offer-03-二维数组的查找</title>
+      <link href="/2020/07/23/jian-zhi-offer-03-er-wei-shu-zu-de-cha-zhao/"/>
+      <url>/2020/07/23/jian-zhi-offer-03-er-wei-shu-zu-de-cha-zhao/</url>
+      
+        <content type="html"><![CDATA[<h1 id="剑指Offer-03-二维数组的查找"><a href="#剑指Offer-03-二维数组的查找" class="headerlink" title="剑指Offer-03-二维数组的查找"></a>剑指Offer-03-二维数组的查找</h1><h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>​         在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p><h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 剑指Offer </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> 剑指Offer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java正则表达式</title>
       <link href="/2020/07/05/java-zheng-ze-biao-da-shi/"/>
       <url>/2020/07/05/java-zheng-ze-biao-da-shi/</url>
