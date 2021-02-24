@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LeetCode-116-填充每个节点的下一个右侧节点指针, 叮噹貓">
+    <meta name="keywords" content="LeetCode-114-二叉树展开为链表(中等), 叮噹貓">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LeetCode-116-填充每个节点的下一个右侧节点指针 | 叮噹貓</title>
+    <title>LeetCode-114-二叉树展开为链表(中等) | 叮噹貓</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">LeetCode-116-填充每个节点的下一个右侧节点指针</h1>
+                    <h1 class="description center-align post-title">LeetCode-114-二叉树展开为链表(中等)</h1>
                 </div>
             </div>
         </div>
@@ -464,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-02-15
+                    2021-02-24
                 </div>
                 
 
@@ -473,7 +473,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    186
+                    262
                 </div>
                 
 
@@ -485,31 +485,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="LeetCode-116-填充每个节点的下一个右侧节点指针-中等"><a href="#LeetCode-116-填充每个节点的下一个右侧节点指针-中等" class="headerlink" title="LeetCode-116-填充每个节点的下一个右侧节点指针(中等)"></a>LeetCode-116-填充每个节点的下一个右侧节点指针(中等)</h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/2021/02/15/leetcode-116-tian-chong-mei-ge-jie-dian-de-xia-yi-ge-you-ce-jie-dian-zhi-zhen/image-20210215234349979.png" alt="image-20210215234349979">)<img src="/2021/02/15/leetcode-116-tian-chong-mei-ge-jie-dian-de-xia-yi-ge-you-ce-jie-dian-zhi-zhen/image-20210215234435556.png" alt="image-20210215234435556"></p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>​        题目的意思是将每一层的结点都用next指针连接起来，题目难点在于如何将两个树的子树如何连接，所以将每一层二叉树节点连接起来看成将每两个相邻节点都连接起来。</p>
+                <h1 id="LeetCode-114-二叉树展开为链表-中等"><a href="#LeetCode-114-二叉树展开为链表-中等" class="headerlink" title="LeetCode-114-二叉树展开为链表(中等)"></a>LeetCode-114-二叉树展开为链表(中等)</h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/2021/02/24/leetcode-114-er-cha-shu-zhan-kai-wei-lian-biao-zhong-deng/image-20210224105609947.png" alt="image-20210224105609947">)<img src="/2021/02/24/leetcode-114-er-cha-shu-zhan-kai-wei-lian-biao-zhong-deng/image-20210224105630795.png" alt="image-20210224105630795"></p>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>​        给flatten函数输入一个结点root，以root为根的二叉树就会被拉平为一条链表。故本题流程应为：</p>
+<ol>
+<li><p>将root的左子树和右子树拉平。</p>
+</li>
+<li><p>将root的右子树接到左子树的下发，然后将整个左子树作为右子树。</p>
+<p>（给递归函数加上定义，根据这个定义即可完成想完成的操作。递归算法的关键要明确函数的定义，相信这个定义，而不要跳进递归细节。）</p>
+</li>
+</ol>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> Node <span class="token function">connect</span><span class="token punctuation">(</span>Node root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// 定义：将以 root 为根的树拉平为链表</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">flatten</span><span class="token punctuation">(</span>TreeNode root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span><span class="token punctuation">(</span>root <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token function">connectTwoNode</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">,</span> root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> root<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">connectTwoNode</span><span class="token punctuation">(</span>Node node1<span class="token punctuation">,</span> Node node2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>node1 <span class="token operator">==</span> null <span class="token operator">||</span> node2 <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 
-        <span class="token comment" spellcheck="true">//将传入的两个结点连接</span>
-        node1<span class="token punctuation">.</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//将左右子树拉平</span>
+        <span class="token function">flatten</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">flatten</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">//将同一个根结点的两个结点连接</span>
-        <span class="token function">connectTwoNode</span><span class="token punctuation">(</span>node1<span class="token punctuation">.</span>left<span class="token punctuation">,</span> node1<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token function">connectTwoNode</span><span class="token punctuation">(</span>node2<span class="token punctuation">.</span>left<span class="token punctuation">,</span> node2<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">/**** 后序遍历位置 ****/</span>
+        <span class="token comment" spellcheck="true">// 1、左右子树已经被拉平成一条链表</span>
+        TreeNode left <span class="token operator">=</span> root<span class="token punctuation">.</span>left<span class="token punctuation">;</span>
+        TreeNode right <span class="token operator">=</span> root<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
 
-        <span class="token comment" spellcheck="true">//将不同根结点的两个结点连接</span>
-        <span class="token function">connectTwoNode</span><span class="token punctuation">(</span>node1<span class="token punctuation">.</span>right<span class="token punctuation">,</span> node2<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 2、将左子树作为右子树</span>
+        root<span class="token punctuation">.</span>left <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        root<span class="token punctuation">.</span>right <span class="token operator">=</span> left<span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//3.将原来的右子树接到当前右子树后端</span>
+        TreeNode p <span class="token operator">=</span> root<span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>right <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            p <span class="token operator">=</span> p<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        p<span class="token punctuation">.</span>right <span class="token operator">=</span> right<span class="token punctuation">;</span>
+
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 
@@ -537,7 +548,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://yoursite.com/2021/02/15/leetcode-116-tian-chong-mei-ge-jie-dian-de-xia-yi-ge-you-ce-jie-dian-zhi-zhen/">http://yoursite.com/2021/02/15/leetcode-116-tian-chong-mei-ge-jie-dian-de-xia-yi-ge-you-ce-jie-dian-zhi-zhen/</a>
+                    <a href="http://yoursite.com/2021/02/24/leetcode-114-er-cha-shu-zhan-kai-wei-lian-biao-zhong-deng/">http://yoursite.com/2021/02/24/leetcode-114-er-cha-shu-zhan-kai-wei-lian-biao-zhong-deng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -752,9 +763,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/02/24/leetcode-114-er-cha-shu-zhan-kai-wei-lian-biao-zhong-deng/">
                     <div class="card-image">
@@ -777,9 +789,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -792,6 +804,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -818,20 +831,20 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/15/leetcode-226-fan-zhuan-er-cha-shu-jian-dan/">
+                <a href="/2021/02/15/leetcode-116-tian-chong-mei-ge-jie-dian-de-xia-yi-ge-you-ce-jie-dian-zhi-zhen/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="LeetCode-226-翻转二叉树（简单）">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="LeetCode-116-填充每个节点的下一个右侧节点指针">
                         
-                        <span class="card-title">LeetCode-226-翻转二叉树（简单）</span>
+                        <span class="card-title">LeetCode-116-填充每个节点的下一个右侧节点指针</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode-226-翻转二叉树（简单）题目
-解题思路​        这道题目比较简单，只要把二叉树上的每一个节点的左右子节点进行交换，，最后的结果就是完全翻转之后的二叉树，关键思路在于我们发现翻转整棵树就是交换每个节点的左右子节点，
+                            LeetCode-116-填充每个节点的下一个右侧节点指针(中等)题目)
+解题思路​        题目的意思是将每一层的结点都用next指针连接起来，题目难点在于如何将两个树的子树如何连接，所以将每一层二叉树节点连接起来看成将每两个相邻节
                         
                     </div>
                     <div class="publish-info">
