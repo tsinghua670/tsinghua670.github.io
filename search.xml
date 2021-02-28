@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>LeetCode-106-从中序与后序遍历序列构造二叉树</title>
+      <link href="/2021/03/01/leetcode-106-cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu/"/>
+      <url>/2021/03/01/leetcode-106-cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LeetCode-106-从中序与后序遍历序列构造二叉树"><a href="#LeetCode-106-从中序与后序遍历序列构造二叉树" class="headerlink" title="LeetCode-106-从中序与后序遍历序列构造二叉树"></a>LeetCode-106-从中序与后序遍历序列构造二叉树</h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/2021/03/01/leetcode-106-cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu/image-20210301005451172.png" alt="image-20210301005451172"></p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-java"><code class="language-java"></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LeetCode-105-从前序与中序遍历序列构造二叉树</title>
+      <link href="/2021/02/27/leetcode-105-cong-qian-xu-yu-zhong-xu-bian-li-xu-lie-gou-zao-er-cha-shu/"/>
+      <url>/2021/02/27/leetcode-105-cong-qian-xu-yu-zhong-xu-bian-li-xu-lie-gou-zao-er-cha-shu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LeetCode-105-从前序与中序遍历序列构造二叉树"><a href="#LeetCode-105-从前序与中序遍历序列构造二叉树" class="headerlink" title="LeetCode-105-从前序与中序遍历序列构造二叉树"></a>LeetCode-105-从前序与中序遍历序列构造二叉树</h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/2021/02/27/leetcode-105-cong-qian-xu-yu-zhong-xu-bian-li-xu-lie-gou-zao-er-cha-shu/image-20210227141152790.png" alt="image-20210227141152790"></p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>先确定根结点的值，把根结点做出来，再递归构造左右子树即可。</p><ol><li>前序遍历第一个元素为根结点</li><li>找到根结点后，再根据中序遍历找到根结点的左右子树</li></ol><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>    <span class="token keyword">public</span> TreeNode <span class="token function">buildTree</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> preorder<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> inorder<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">return</span> <span class="token function">build</span><span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> preorder<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>                    inorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> inorder<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span>    <span class="token comment" spellcheck="true">/*    若前序遍历数组为 preorder[preStart..preEnd]，   后续遍历数组为 postorder[postStart..postEnd]，   构造二叉树，返回该二叉树的根节点     */</span>    <span class="token keyword">private</span> TreeNode <span class="token function">build</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> preorder<span class="token punctuation">,</span> <span class="token keyword">int</span> preStart<span class="token punctuation">,</span> <span class="token keyword">int</span> preEnd<span class="token punctuation">,</span>                            <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> inorder<span class="token punctuation">,</span> <span class="token keyword">int</span> inStart<span class="token punctuation">,</span> <span class="token keyword">int</span> inEnd<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token keyword">if</span><span class="token punctuation">(</span>preStart <span class="token operator">></span> preEnd<span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token keyword">return</span> null<span class="token punctuation">;</span>        <span class="token punctuation">}</span>                               <span class="token comment" spellcheck="true">//Root的值就是前序遍历的第一个元素</span>       <span class="token keyword">int</span> rootVal <span class="token operator">=</span> preorder<span class="token punctuation">[</span>preStart<span class="token punctuation">]</span><span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//rootVal在中序遍历的索引</span>       <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>       <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> inEnd<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>           <span class="token keyword">if</span><span class="token punctuation">(</span>rootVal <span class="token operator">==</span> inorder<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>               index <span class="token operator">=</span> i<span class="token punctuation">;</span>           <span class="token punctuation">}</span>       <span class="token punctuation">}</span>       <span class="token keyword">int</span> leftSize <span class="token operator">=</span> index <span class="token operator">-</span> inStart<span class="token punctuation">;</span>       TreeNode root <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span>rootVal<span class="token punctuation">)</span><span class="token punctuation">;</span>       <span class="token comment" spellcheck="true">//递归构造左右子树</span>       root<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">build</span><span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> preStart <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> preStart <span class="token operator">+</span> leftSize<span class="token punctuation">,</span>                        inorder<span class="token punctuation">,</span> inStart<span class="token punctuation">,</span> index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>       root<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">build</span><span class="token punctuation">(</span>preorder<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> preStart <span class="token operator">+</span> leftSize<span class="token punctuation">,</span> preEnd<span class="token punctuation">,</span>                        inorder<span class="token punctuation">,</span> index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> inEnd<span class="token punctuation">)</span><span class="token punctuation">;</span>                                <span class="token keyword">return</span> root<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode-654-最大二叉树(中等)</title>
       <link href="/2021/02/24/leetcode-654-zui-da-er-cha-shu-zhong-deng/"/>
       <url>/2021/02/24/leetcode-654-zui-da-er-cha-shu-zhong-deng/</url>
