@@ -394,33 +394,6 @@
     
     
     <entry>
-      <title>快速排序</title>
-      <link href="/2020/05/10/kuai-su-pai-xu/"/>
-      <url>/2020/05/10/kuai-su-pai-xu/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      <categories>
-          
-          <category> 数据结构与算法 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-            <tag> 算法 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>归并排序</title>
       <link href="/2020/05/10/gui-bing-pai-xu/"/>
       <url>/2020/05/10/gui-bing-pai-xu/</url>
