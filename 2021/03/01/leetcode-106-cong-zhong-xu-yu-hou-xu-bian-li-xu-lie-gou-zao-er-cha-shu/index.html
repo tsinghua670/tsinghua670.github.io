@@ -473,7 +473,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    25
+                    243
                 </div>
                 
 
@@ -486,7 +486,49 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="LeetCode-106-从中序与后序遍历序列构造二叉树"><a href="#LeetCode-106-从中序与后序遍历序列构造二叉树" class="headerlink" title="LeetCode-106-从中序与后序遍历序列构造二叉树"></a>LeetCode-106-从中序与后序遍历序列构造二叉树</h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/2021/03/01/leetcode-106-cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu/image-20210301005451172.png" alt="image-20210301005451172"></p>
-<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-java"><code class="language-java"></code></pre>
+<h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>此题亦是先确定根结点，先把根结点做出来，然后再以递归的方式构造左右子树。</p>
+<ol>
+<li><p>后序遍历的最后一个元素为根结点</p>
+</li>
+<li><p>根据根结点在中序遍历的索引，找到左右子树</p>
+</li>
+<li><p>中后序遍历的关系图（图来自网络）</p>
+<p><img src="/2021/03/01/leetcode-106-cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu/image-20210301104158025.png" alt="image-20210301104158025"></p>
+</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> TreeNode <span class="token function">buildTree</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> inorder<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> postorder<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">build</span><span class="token punctuation">(</span>inorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> inorder<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                        postorder<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> postorder<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> TreeNode <span class="token function">build</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> inorder<span class="token punctuation">,</span> <span class="token keyword">int</span> inStart<span class="token punctuation">,</span> <span class="token keyword">int</span> inEnd<span class="token punctuation">,</span>
+                            <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> postorder<span class="token punctuation">,</span> <span class="token keyword">int</span> postStart<span class="token punctuation">,</span> <span class="token keyword">int</span> postEnd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>postStart <span class="token operator">></span> postEnd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">//root结点应为后序遍历的最后一个元素</span>
+        <span class="token keyword">int</span> rootVal <span class="token operator">=</span> postorder<span class="token punctuation">[</span>postEnd<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//找到根结点在中序遍历的位置</span>
+        <span class="token keyword">int</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> inEnd<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>rootVal <span class="token operator">==</span> inorder<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                index <span class="token operator">=</span> i<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">int</span> leftSize <span class="token operator">=</span> index <span class="token operator">-</span> inStart<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//构造根结点</span>
+        TreeNode root <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span>rootVal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//构造左右子树</span>
+        root<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token function">build</span><span class="token punctuation">(</span>inorder<span class="token punctuation">,</span> inStart<span class="token punctuation">,</span> index <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                            postorder<span class="token punctuation">,</span> postStart<span class="token punctuation">,</span>   postStart <span class="token operator">+</span> leftSize <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        root<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token function">build</span><span class="token punctuation">(</span>inorder<span class="token punctuation">,</span> index <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> inEnd<span class="token punctuation">,</span>
+                            postorder<span class="token punctuation">,</span> postStart <span class="token operator">+</span> leftSize<span class="token punctuation">,</span> postEnd <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> root<span class="token punctuation">;</span>                                        
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -727,32 +769,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/01/leetcode-106-cong-zhong-xu-yu-hou-xu-bian-li-xu-lie-gou-zao-er-cha-shu/">
+                <a href="/2021/03/01/leetcode-652-xun-zhao-chong-fu-de-zi-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="LeetCode-106-从中序与后序遍历序列构造二叉树">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="LeetCode-652-寻找重复的子树">
                         
-                        <span class="card-title">LeetCode-106-从中序与后序遍历序列构造二叉树</span>
+                        <span class="card-title">LeetCode-652-寻找重复的子树</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            LeetCode-106-从中序与后序遍历序列构造二叉树题目
+                            LeetCode-652-寻找重复的子树题目
 解题思路代码
 
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-01
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-01
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -765,7 +806,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -809,8 +849,9 @@
 
 前序遍历第一个元素为根结点
 找到根结点后，再根据中序遍历找到根结点的左右子树
+前中序关系图（图来自网络）
 
-代码class Soluti
+
                         
                     </div>
                     <div class="publish-info">
