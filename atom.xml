@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-03-02T16:13:09.642Z</updated>
+  <updated>2021-03-06T04:51:14.525Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-538-把二叉搜索树转换为累加树</title>
+    <link href="http://yoursite.com/2021/03/06/leetcode-538-ba-er-cha-sou-suo-shu-zhuan-huan-wei-lei-jia-shu/"/>
+    <id>http://yoursite.com/2021/03/06/leetcode-538-ba-er-cha-sou-suo-shu-zhuan-huan-wei-lei-jia-shu/</id>
+    <published>2021-03-06T04:13:20.000Z</published>
+    <updated>2021-03-06T04:51:14.525Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;LeetCode-538-把二叉搜索树转换为累加树&quot;&gt;&lt;a href=&quot;#LeetCode-538-把二叉搜索树转换为累加树&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-230-二叉搜索树中第K小的元素</title>
@@ -580,33 +611,6 @@
       <category term="大数据" scheme="http://yoursite.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
       <category term="Hadoop" scheme="http://yoursite.com/tags/Hadoop/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Maven工程变灰色解决方法</title>
-    <link href="http://yoursite.com/2020/05/09/maven-gong-cheng-bian-hui-se-jie-jue-fang-fa/"/>
-    <id>http://yoursite.com/2020/05/09/maven-gong-cheng-bian-hui-se-jie-jue-fang-fa/</id>
-    <published>2020-05-09T12:48:56.000Z</published>
-    <updated>2020-05-09T12:52:22.808Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Maven工程变灰色解决方法&quot;&gt;&lt;a href=&quot;#Maven工程变灰色解决方法&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="开发环境" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
-    
-    
-      <category term="Maven" scheme="http://yoursite.com/tags/Maven/"/>
     
   </entry>
   
