@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>LeetCode-455-分发饼干</title>
+      <link href="/2021/05/29/leetcode-455-fen-fa-bing-gan/"/>
+      <url>/2021/05/29/leetcode-455-fen-fa-bing-gan/</url>
+      
+        <content type="html"><![CDATA[<h1 id="LeetCode-455-分发饼干"><a href="#LeetCode-455-分发饼干" class="headerlink" title="LeetCode-455-分发饼干"></a>LeetCode-455-分发饼干</h1><h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p><img src="/2021/05/29/leetcode-455-fen-fa-bing-gan/image-20210529093655800.png" alt="image-20210529093655800"></p><h3 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h3><p>该题意大致为每个孩子都有一个胃口值，而每个饼干都有的个尺寸值size值，當餅乾的尺寸值大於孩子的胃口值則可喂飽孩子。</p><p>本題首先將代表孩子胃口值的數組g和代表餅乾大小的數組s進行排序，然後逆向循環遍歷兩個數組進行比較，當g[i] &lt;= s[i]時，則當前餅乾能喂飽當前孩子</p><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">findContentChildren</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> g<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>        Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>        Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">findContentChildren</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> g<span class="token punctuation">,</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> s<span class="token punctuation">)</span> <span class="token punctuation">{</span>        Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span><span class="token punctuation">;</span>        Arrays<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">int</span> child <span class="token operator">=</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>        <span class="token keyword">int</span> cookie <span class="token operator">=</span> g<span class="token punctuation">.</span>length<span class="token punctuation">;</span>        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>        <span class="token keyword">int</span> index <span class="token operator">=</span> child <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> cookie <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token keyword">if</span><span class="token punctuation">(</span>index <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> g<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> s<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>                index<span class="token operator">--</span><span class="token punctuation">;</span>                count<span class="token operator">++</span><span class="token punctuation">;</span>            <span class="token punctuation">}</span>        <span class="token punctuation">}</span>        <span class="token keyword">return</span> count<span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> LeetCode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+            <tag> 算法 </tag>
+            
+            <tag> LeetCode </tag>
+            
+            <tag> 贪心算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LeetCode-538-把二叉搜索树转换为累加树</title>
       <link href="/2021/03/06/leetcode-538-ba-er-cha-sou-suo-shu-zhuan-huan-wei-lei-jia-shu/"/>
       <url>/2021/03/06/leetcode-538-ba-er-cha-sou-suo-shu-zhuan-huan-wei-lei-jia-shu/</url>

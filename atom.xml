@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-03-06T04:51:14.525Z</updated>
+  <updated>2021-05-29T02:20:55.036Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode-455-分发饼干</title>
+    <link href="http://yoursite.com/2021/05/29/leetcode-455-fen-fa-bing-gan/"/>
+    <id>http://yoursite.com/2021/05/29/leetcode-455-fen-fa-bing-gan/</id>
+    <published>2021-05-29T01:34:19.000Z</published>
+    <updated>2021-05-29T02:20:55.036Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;LeetCode-455-分发饼干&quot;&gt;&lt;a href=&quot;#LeetCode-455-分发饼干&quot; class=&quot;headerlink&quot; title=&quot;LeetCode-455-分发饼干&quot;&gt;&lt;/a&gt;LeetCode-455-分发饼干&lt;/h1&gt;&lt;h3
+        
+      
+    
+    </summary>
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/categories/LeetCode/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+      <category term="算法" scheme="http://yoursite.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+      <category term="贪心算法" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode-538-把二叉搜索树转换为累加树</title>
@@ -582,35 +615,6 @@
       <category term="java" scheme="http://yoursite.com/tags/java/"/>
     
       <category term="jdk8" scheme="http://yoursite.com/tags/jdk8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu16.04下搭建hadoop3.2.0</title>
-    <link href="http://yoursite.com/2020/05/09/ubuntu16-04-xia-da-jian-hadoop3-2-0/"/>
-    <id>http://yoursite.com/2020/05/09/ubuntu16-04-xia-da-jian-hadoop3-2-0/</id>
-    <published>2020-05-09T12:56:24.000Z</published>
-    <updated>2020-05-09T13:26:50.150Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;Ubuntu16-04下搭建hadoop3-2-0&quot;&gt;&lt;a href=&quot;#Ubuntu16-04下搭建hadoop3-2-0&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="大数据" scheme="http://yoursite.com/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    
-      <category term="大数据" scheme="http://yoursite.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-      <category term="Hadoop" scheme="http://yoursite.com/tags/Hadoop/"/>
     
   </entry>
   
